@@ -9,7 +9,9 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
-        "pokeface/meme": "dev-master"
+        "pokeface/meme": "dev-master",
+        "pokeface/meme-server": "dev-master"
+        
     },
     "require-dev": {
         "filp/whoops": "^2.0",
@@ -25,7 +27,15 @@
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "path",
+            "url": "packages/pokeface/meme-server",
+            "options": {
+                "symlink": true
+            }
         }
+
     ],
     "autoload": {
         "classmap": [

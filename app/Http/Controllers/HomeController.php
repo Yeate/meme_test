@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
-use Pokeface\Meme\Http\Meme;
+use Pokeface\MemeServer\Facades\MemeServer;
 
 
 class HomeController extends BaseController
 {
 	public function index(){
-		dd(Meme::search('求求你')->get());
+		dd(MemeServer::search('求求你'));
 	}
 }

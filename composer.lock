@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "14a0fe0f76e4c78f5c16585c6dacb61e",
+    "content-hash": "cd1d0268fb5d9ebfb54a9271f237dac0",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1014,6 +1014,53 @@
             "time": "2018-03-19T15:50:49+00:00"
         },
         {
+            "name": "netease/nos-php-sdk",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NetEase-Object-Storage/nos-php-sdk.git",
+                "reference": "6ae1ffe40764723281b18b9c1300962d494fa777"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NetEase-Object-Storage/nos-php-sdk/zipball/6ae1ffe40764723281b18b9c1300962d494fa777",
+                "reference": "6ae1ffe40764723281b18b9c1300962d494fa777",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NOS\\": "src/NOS"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "netease",
+                    "homepage": "https://c.163.com/product/nos"
+                }
+            ],
+            "description": "netease NOS SDK for PHP",
+            "homepage": "https://c.163.com/product/nos",
+            "time": "2016-09-29T10:50:33+00:00"
+        },
+        {
             "name": "nikic/php-parser",
             "version": "v4.0.3",
             "source": {
@@ -1127,7 +1174,7 @@
             "dist": {
                 "type": "path",
                 "url": "/home/vagrant/code/pk/packages/pokeface/meme",
-                "reference": "9e7a33c4acd391dddc964ec97771b1cca3ba797f",
+                "reference": "d7fa807006aaf9bc46a40e644cac4feb0ae10cb9",
                 "shasum": null
             },
             "require": {
@@ -1158,7 +1205,52 @@
                     "email": "ye3245@sina.com"
                 }
             ],
-            "description": "meme"
+            "description": "meme",
+            "transport-options": {
+                "symlink": true
+            }
+        },
+        {
+            "name": "pokeface/meme-server",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "packages/pokeface/meme-server",
+                "reference": "a04d76018d1e18065fa11dc3e8393ab6325c4436",
+                "shasum": null
+            },
+            "require": {
+                "netease/nos-php-sdk": "1.0.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pokeface\\MemeServer\\MemeServerServiceProvider"
+                    ],
+                    "aliases": {
+                        "MemeServer": "Pokeface\\MemeServer\\Facades\\MemeServerFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pokeface\\MemeServer\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "pokeface",
+                    "email": "ye3245@sina.com"
+                }
+            ],
+            "description": "meme-server",
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "psr/container",
@@ -4511,7 +4603,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "pokeface/meme": 20
+        "pokeface/meme": 20,
+        "pokeface/meme-server": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
